@@ -173,7 +173,7 @@ class RNShare {
     return new Promise((resolve, reject) => {
       requireAndAskPermissions(options)
         .then(() => {
-          if (options.url && !options.urls) {
+          if (options.url && !options.urls && Platform.OS == 'ios') {
             // Backward compatibility with { Share } from react-native
             const url = options.url;
             delete options.url;
